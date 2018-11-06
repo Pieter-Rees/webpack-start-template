@@ -1,7 +1,0 @@
-{
-  "rules": {
-    "declaration-colon-space-after": "always",
-    "indentation": [4, { "severity": "warning" } ],
-    "max-empty-lines": 2
-  }
-}
