@@ -1,3 +1,1 @@
-let peit = 1;
-
-console.log(peit);
+import './scss/main.scss';
