@@ -1,5 +1,3 @@
-piet = () => {
-    console.log('tst')
-}
+let peit = 1;
 
-piet();
+console.log(peit);
