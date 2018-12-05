@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/index.js',
   output: {
     path: __dirname + '/dist',
-    filename: 'index_bundle.js'
+    filename: 'index_bundle.js',
   },
   module: {
     rules: [
@@ -14,16 +14,16 @@ module.exports = {
         use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 5000
-            }
-          }
-        ]
-      }
+        test: /\.(jpg|jepg|png|svg|webp)$/,
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[path][name].[hash].[ext]",
+            outputPath: 'img/',
+            context: 'src/img'
+          },
+        },
+      },
     ]
   },
   plugins: [
