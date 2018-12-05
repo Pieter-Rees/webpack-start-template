@@ -2,6 +2,10 @@
   "name": "webpack-start-template",
   "version": "1.0.0",
   "description": "New webpack template",
+  "keywords": [
+    "Webpack",
+    "Webpack 4"
+  ],
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --mode development --open",
@@ -14,7 +18,8 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Pieter-Rees/webpack-start-template/issues"
+    "url": "https://github.com/Pieter-Rees/webpack-start-template/issues",
+    "email": "pieter@pieterrees.nl"
   },
   "homepage": "https://github.com/Pieter-Rees/webpack-start-template#readme",
   "devDependencies": {
@@ -25,6 +30,7 @@
     "clean-webpack-plugin": "^1.0.0",
     "css-loader": "^1.0.1",
     "cssnano": "^4.1.7",
+    "dotenv": "^6.1.0",
     "eslint": "^5.9.0",
     "eslint-loader": "^2.1.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
@@ -47,5 +53,6 @@
     "webpack-dev-server": "^3.1.10",
     "webpack-md5-hash": "0.0.6"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "private": true
 }
