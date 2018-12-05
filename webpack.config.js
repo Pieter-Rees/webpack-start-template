@@ -8,7 +8,9 @@ const WebpackMd5Hash = require("webpack-md5-hash");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: { main: "./src/index.js" },
+  entry: { 
+    main: "./src/index.js"
+  },
   output: {
     path: path.resolve(__dirname, "dist"),
     // filename: "[name].[chunkhash].js"
@@ -51,9 +53,10 @@ module.exports = {
   [
     new DashboardPlugin({ port: 8080 }),    
     new CleanWebpackPlugin('dist', {}),
-    // new MiniCssExtractPlugin({
-    //   filename: 'style.[contenthash].css',
-    // }),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css',
+    // filename: 'style.css',    
+    }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
