@@ -1,18 +1,17 @@
+const merge = require("webpack-merge");
+const common = require("./webpack.common.js");
+
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: 'production',
+  mode: "development",
   module: {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
-          "sass-loader"
-        ]
+        use: ["style-loader", "css-loader", "sass-loader"]
       },
       {
         test: /\.(jpg|jepg|png|svg|webp)$/,
@@ -28,12 +27,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin("dist", {}),
-    new MiniCssExtractPlugin({
-      filename: devMode ? "[name].css" : "[name].[contenthash].css",
-      chunkFilename: devMode ? "[id].css" : "[id].[contenthash].css"
-      // filename: 'style.css',
-    }),
     new HtmlWebpackPlugin({
       title: "My App",
       template: "./src/index.html"
