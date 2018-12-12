@@ -24,7 +24,7 @@
   "homepage": "https://github.com/Pieter-Rees/webpack-start-template#readme",
   "devDependencies": {
     "clean-webpack-plugin": "^1.0.0",
-    "css-loader": "^1.0.1",
+    "css-loader": "^2.0.0",
     "eslint": "^5.9.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
