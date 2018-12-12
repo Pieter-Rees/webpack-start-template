@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --mode development --open",
-    "build": "webpack --mode production"
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
