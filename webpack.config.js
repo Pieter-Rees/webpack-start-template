@@ -26,7 +26,14 @@ module.exports = {
       },
     ]
   },
-  plugins: [
+  plugins: 
+  [
+    new DashboardPlugin({ port: 8080 }),    
+    new CleanWebpackPlugin('dist', {}),
+    new MiniCssExtractPlugin({
+      filename: 'style.[contenthash].css',
+    // filename: 'style.css',    
+    }),
     new HtmlWebpackPlugin({
       title: 'My App',
       template: './src/index.html'
