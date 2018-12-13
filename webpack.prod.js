@@ -33,7 +33,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(jpg|jepg|png|svg|webp)$/,
+        test: /\.(jpe?g|png|gif|svg)$/i,
         use: {
           loader: "file-loader",
           options: {
@@ -54,6 +54,28 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "My App",
       template: "./src/index.html"
+    }),
+    new ImageminPlugin({
+      bail: false, // Ignore errors on corrupted images
+      cache: true,
+      imageminOptions: {
+        // Lossless optimization with custom option
+        // Feel free to experement with options for better result for you
+        plugins: [
+          imageminGifsicle({
+            interlaced: true
+          }),
+          imageminJpegtran({
+            progressive: true
+          }),
+          imageminOptipng({
+            optimizationLevel: 5
+          }),
+          imageminSvgo({
+            removeViewBox: true
+          })
+        ]
+      }
     })
   ]
 };
