@@ -4,7 +4,7 @@ var config = {
   entry: "./src/index.js",
   output: {
     path: __dirname + "/dist",
-    filename: "index_bundle.js"
+    filename: "[name].[contenthash].js"
   },
   module: {},
   plugins: [new DashboardPlugin({ port: 8080 })]
