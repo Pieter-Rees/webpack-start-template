@@ -1,9 +1,6 @@
 const webpack = require('webpack');
-const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {

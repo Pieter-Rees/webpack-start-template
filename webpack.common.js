@@ -1,4 +1,5 @@
 const DashboardPlugin = require("webpack-dashboard/plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 var config = {
   entry: "./src/index.js",
@@ -7,7 +8,9 @@ var config = {
     filename: "[name].[contenthash].js"
   },
   module: {},
-  plugins: [new DashboardPlugin({ port: 8080 })]
+  plugins: [
+    new CleanWebpackPlugin("dist", {}),    
+    new DashboardPlugin({ port: 8080 })]
 };
 
 module.exports = (env, argv) => {
