@@ -7,7 +7,9 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    watchContentBase: true,
+    hot: true
   },
   optimization: {
     noEmitOnErrors: true
