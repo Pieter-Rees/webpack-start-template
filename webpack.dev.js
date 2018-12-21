@@ -7,7 +7,9 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist'
+    contentBase: './dist',
+    watchContentBase: true,
+    hot: true
   },
   optimization: {
     noEmitOnErrors: true
@@ -19,6 +21,9 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'eslint-loader',
+        options: {
+          emitWarning: true
+        }
       },
       {
         test: /\.js$/,
