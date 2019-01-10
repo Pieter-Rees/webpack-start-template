@@ -1,5 +1,7 @@
 import '../node_modules/normalize.css/normalize.css';
-
 import './scss/main.scss';
+import 'bulma';
 
-let piet = 1;
+const piet = 1;
+
+console.log(piet);
