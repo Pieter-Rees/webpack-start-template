@@ -1,14 +1,14 @@
 const common = require('./webpack.common.js');
 
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ImageminPlugin = require("imagemin-webpack");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ImageminPlugin = require('imagemin-webpack');
 
 // Images
-const imageminGifsicle = require("imagemin-gifsicle");
-const imageminJpegtran = require("imagemin-jpegtran");
-const imageminOptipng = require("imagemin-optipng");
-const imageminSvgo = require("imagemin-svgo");
+const imageminGifsicle = require('imagemin-gifsicle');
+const imageminJpegtran = require('imagemin-jpegtran');
+const imageminOptipng = require('imagemin-optipng');
+const imageminSvgo = require('imagemin-svgo');
 
 module.exports = {
   mode: 'production',
@@ -27,21 +27,16 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
-        use: [
-          "style-loader",
-          "css-loader",
-          "postcss-loader",
-          "sass-loader"
-        ]
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       },
       {
         test: /\.(jpe?g|png|gif|svg)$/i,
         use: {
-          loader: "file-loader",
+          loader: 'file-loader',
           options: {
-            name: "[path][name].[hash].[ext]",
-            outputPath: "img/",
-            context: "src/img"
+            name: '[path][name].[hash].[ext]',
+            outputPath: 'img/',
+            context: 'src/img'
           }
         }
       }
@@ -49,12 +44,13 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].[contenthash].css",
-      chunkFilename: "[id].[contenthash].css"
+      filename: '[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
-      title: "My App",
-      template: "./src/index.html"
+      title: 'My App',
+      template: './src/index.html',
+      minify: true
     }),
     new ImageminPlugin({
       bail: false, // Ignore errors on corrupted images
