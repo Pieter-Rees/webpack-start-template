@@ -1,15 +1,15 @@
 const webpack = require('webpack');
 const common = require('./webpack.common.js');
-
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist',
-    watchContentBase: true,
-    hot: true
+    contentBase: path.join(__dirname, 'src'),
+    hot: true,
+    watchContentBase: true
   },
   optimization: {
     noEmitOnErrors: true
@@ -70,7 +70,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       title: 'My App',
-      template: './src/index.html'
+      template: './src/index.hbs'
     })
   ]
 };
