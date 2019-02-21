@@ -5,3 +5,7 @@ import 'bulma';
 const piet = 1;
 
 console.log(piet);
+
+if (module.hot) {
+  module.hot.accept();
+}
