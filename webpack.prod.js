@@ -49,7 +49,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: 'My App',
-      template: './src/index.html',
+      template: './src/index.hbs',
       minify: true
     }),
     new ImageminPlugin({
